@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #52e75a;
+    user-select: none;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(325deg, #03001e 0%, #9a34df 30%, #ec38bc 70%, #fdeff9 100%);
+    padding: 50px 60px;
+    border-radius: 20%;
+}
+h2 {
+    font-size: 3em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.reset{
+    padding: 15px 20px;
+    width: 100%;
+    color: black;
+    background-color: #fdeff9;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    font-weight: 600;
+}
+.reset:focus{
+    color:#52e75a;
+    background-color: #797a65;
+}
+
+.game{
+    width: 430px;
+    height: 430px;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fdeff9;
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+
+}
+
+.item::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(./rickandmorty.png) center center no-repeat;
+    transition: transform 0.20s;
+    transform: rotateY(0deg) scaleX(-1);
+    backface-visibility: hidden;
+    background-size: 100% 100%;
+}
+.item.boxOpen{
+    transform: rotateY(0deg);
+}
+
+.boxOpen::after{
+    transform: rotateY(180deg);
+}
+
+
+
+
